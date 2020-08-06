@@ -62,4 +62,4 @@ function menuMaker(array) {
 
 document.querySelector("body").prepend(menuMaker(menuItems));
 
-gsap.from(".menu-button", { duration: 2, x: 300, ease:"bounce" });
+gsap.from(".menu-button", { duration: 2, x: 300, ease:"bounce", opacity: 0 });
