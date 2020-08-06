@@ -114,3 +114,52 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function articleMaker(data) {
+  const article = document.createElement("div");
+  const articleTitle = document.createElement("h2");
+  const dateLine = document.createElement("p");
+  const contentBoxOne = document.createElement("p");
+  const contentBoxTwo = document.createElement("p");
+  const contentBoxThree = document.createElement("p");
+  const expandButton = document.createElement("span");
+
+  article.appendChild(articleTitle);
+  article.appendChild(dateLine);
+  article.appendChild(contentBoxOne);
+  article.appendChild(contentBoxTwo);
+  article.appendChild(contentBoxThree);
+  article.appendChild(expandButton);
+
+  article.classList.add("article");
+  dateLine.className = "date";
+  expandButton.className = "expandButton";
+
+  articleTitle.textContent = data.title;
+  dateLine.textContent = data.date;
+  contentBoxOne.textContent = data.firstParagraph;
+  contentBoxTwo.textContent = data.secondParagraph;
+  contentBoxThree.textContent = data.thirdParagraph;
+  expandButton.textContent = "+";
+
+  article.addEventListener("click", () => {
+    article.classList.toggle("article-open");
+  });
+  return article;
+}
+
+articleMaker(data);
+
+data.forEach((item) => {
+  const article = articleMaker(item);
+  document.body.appendChild(article);
+});
+
+gsap.to(".expandButton", {
+  duration: 7,
+  x: 300,
+  color: "red",
+  ease: "elastic",
+  stagger: 0.25,
+  rotation: 360,
+});
