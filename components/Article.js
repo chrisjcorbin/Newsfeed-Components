@@ -141,7 +141,6 @@ function articleMaker(data) {
   contentBoxTwo.textContent = data.secondParagraph;
   contentBoxThree.textContent = data.thirdParagraph;
   expandButton.textContent = "+";
-  console.log(article);
 
   article.addEventListener("click", () => {
     article.classList.toggle("article-open");
