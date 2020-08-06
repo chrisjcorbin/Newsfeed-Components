@@ -54,4 +54,4 @@ function menuMaker(array) {
 
 document.querySelector("body").prepend(menuMaker(menuItems));
 
-gsap.to(".menu-button", { duration: 2, x: 300, color: "red" });
+gsap.to(".menu-button", { duration: 2, x: 300, borderRadius:"20%", border:"5px solid rebeccapurple" });
