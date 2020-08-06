@@ -154,3 +154,5 @@ data.forEach((item) => {
   const article = articleMaker(item);
   document.body.appendChild(article);
 }); 
+
+gsap.to(".expandButton", { duration: 2, x: 300, color: "red" });

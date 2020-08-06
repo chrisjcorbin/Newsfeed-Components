@@ -53,3 +53,5 @@ function menuMaker(array) {
 }
 
 document.querySelector("body").prepend(menuMaker(menuItems));
+
+gsap.to(".menu-button", { duration: 2, x: 300, color: "red" });
