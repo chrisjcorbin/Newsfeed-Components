@@ -155,4 +155,4 @@ data.forEach((item) => {
   document.body.appendChild(article);
 });
 
-gsap.to(".expandButton", { duration: 5, x: 300, color: "red", ease:"elastic" });
+gsap.to(".expandButton", { duration: 5, x: 300, color: "red", ease:"elastic", stagger: 0.25 });
