@@ -48,10 +48,18 @@ function menuMaker(array) {
   const menuButton = document.querySelector(".menu-button");
   menuButton.addEventListener("click", () => {
     menu.classList.toggle("menu--open");
+    gsap.to(".menu--open", {
+      duration: 2,
+      borderRadius: "20%",
+      border: "5px solid rebeccapurple",
+      ease: "bounce",
+      scale: 0.75,
+      y: "-10%",
+    });
   });
   return menu;
 }
 
 document.querySelector("body").prepend(menuMaker(menuItems));
 
-gsap.to(".menu-button", { duration: 2, x: 300, borderRadius:"20%", border:"5px solid rebeccapurple" });
+gsap.from(".menu-button", { duration: 2, x: 300, ease:"bounce" });
